@@ -1,0 +1,649 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+	<meta name="keywords" content="Finance, FinanceScript, fscpt, interest, credit, risk, simulation, asset backed securities, abs, equity, stock chart, technical analysis, valuation, derivatives, forwards, futures, option, swap, corporate finance, real estate, private equity, commodity, portfolio" />
+	<meta name="description" content="FinanceScript provides financial information and assists financial calculations" />
+	<title> FinanceScript </title>
+	<link rel="stylesheet" type="text/css" href="../css/design.css" />
+	<link rel="shortcut icon" href="../images/titleIcon.ico" />
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../js/format.js"></script>
+	<script language="JavaScript">
+	
+	</script>
+</head>
+
+<body>
+	<header>
+		<div id="header">
+			<div id="logo">
+			<h1> <a href="../default.html"> <img src="../images/Logo.png" alt="FinanceScript" width="90" height="80"/> </a> </h1>
+			</div>
+			<div id="twitter">
+			<a href="https://twitter.com/FinanceScript" target="_blank"> <img src="../images/TwitterLogo.png" alt="" width="32" height="30"/></a>
+			</div>
+			<div id="linkedin">
+			<a href="https://www.linkedin.com/company/financescript-com?trk=company_logo" target="_blank"> <img src="../images/LIlogo.png" alt="" width="30" height="30"/></a>
+			</div>
+		</div>
+		<div id="subheader">
+			<div id="navset">
+			<ul id="nav">
+				<li id="lemon"><a> About </a>
+					<ul class="sub1">
+						<li><a href="../about/default.html"> About FinanceScript </a></li>
+						<li><a href="../about/contact.html"> Contact Us </a></li>
+					</ul>
+				</li>
+				<li id="green"><a> Fixed Income </a>
+					<ul class="sub1">
+						<li><a href="../fixed/invest.html"> Investing in Bonds </a></li>
+						<li><a href="../fixed/credit.html"> Credit Analysis </a></li>
+						<li><a href="../fixed/abs.html"> Asset Backed Securities </a></li>
+					</ul>
+				</li>
+				<li id="blue"><a> Equity </a>
+					<ul class="sub1">
+						<li><a href="../equity/invest.html"> Investing in Equities </a></li>
+						<li><a href="../equity/stockchart.html"> Stock Chart </a></li>
+						<li><a href="../equity/valuation.html"> Equity Valuation </a></li>
+					</ul>
+				</li>
+				<li id="purple"><a> Derivatives </a>
+					<ul class="sub1">
+						<li><a href="../derivatives/invest.html"> About Derivatives </a></li>
+						<li><a href="../derivatives/forwardfutures.html"> Forwards / Futures </a></li>
+						<li><a href="../derivatives/option.html"> Options </a></li>
+						<li><a href="../derivatives/swap.html"> Swaps </a></li>
+					</ul>
+				</li>
+				<li id="orange"><a> Others </a>
+					<ul class="sub1">
+						<li><a href="../others/corpfinance.html"> Corporate Finance </a></li>
+						<li><a href="../others/realestate.html"> Real Estate Investment </a></li>
+						<li><a href="../others/privateequity.html"> Private Equities </a></li>
+						<li><a href="../others/commodity.html"> Commodity </a></li>
+						<li><a href="../others/portfolio.html"> Portfolio Management </a></li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</header>
+<div id="mainbody">
+	<div id="topicNav">
+		<h2>Choose One</h2>
+		<ul>
+			<li id="c1" class="clicked"><a id="a1" class="clicked"> Concepts </a></li>
+			<li id="c2" class="notclicked"><a id="a2" class="clicked"> Forecasting </a></li>
+			<li id="c3" class="notclicked"><a id="a3" class="clicked"> Dividend Discount Model </a></li>
+            <li id="c4" class="notclicked"><a id="a4" class="clicked"> Free Cash Flow Valuation </a></li>
+            <li id="c5" class="notclicked"><a id="a5" class="clicked"> Market-Based Valuation </a></li>
+            <li id="c6" class="notclicked"><a id="a6" class="clicked"> Residual Income Valuation </a></li>
+		</ul>
+	</div>
+	<div id="mainmainbody">
+		<div id="b1">
+			<h2>Concepts<a href="" class="p1" onclick="printDiv('b1')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+			<br />
+			<h3>
+				Introduction
+			</h3>
+			<br />
+			<p>
+				<strong>Valuation</strong> is a process of estimating the value of an asset by (1) using a model based on relevant variables that affect the fundamental value of the asset, or by (2) comparing it to the observable market value of similar assets. A good valuation would estimate the value of the asset close to its <strong>intrinsic value (IV)</strong>, the valuation from the complete understanding of the characteristics of the asset or issuing firm. Of course, the market price usually differs from the intrinsic value due to <em>actual mispricing</em>. Even so, in the long-run, the price will most likely move close to the intrinsic value.
+			</p>
+			<br />
+			<h3>
+				General Steps to an Equity Valuation
+			</h3>
+			<br />
+			<p>
+				An analyst may follow the following steps when conducting an equity valuation:
+			</p>
+			<br />
+			<ol>
+				<li>Understand the buiness</li>
+				<li>Forecast company performance</li>
+				<li>Select the appropriate valuation model</li>
+				<li>Convert the forecast into valuation</li>
+				<li>Apply the valuation conclusions</li>
+			</ol>
+			<br />
+			<h3>
+				Step 1, Understand the Business
+			</h3>
+			<br />
+			<p>
+				It is important to know how the firm makes money. Understanding a firm's industry helps an analyst forecast the firm's profitability. An industry's long-term profitability is often determined by the following five <strong>elements of the industry structure</strong> developed by Professor Michael Porter: 
+			</p>
+			<br />
+			<ul>
+				<li>Threat of new entrants in the industry</li>
+				<li>Threat of substitutes</li>
+				<li>Bargaining power of buyers</li>
+				<li>Bargaining power of suppliers</li>
+				<li>Rivalry among existing competitors</li>
+			</ul>
+			<br />
+			<p>
+				Of course, a firm in the same business can be more successful than another. To be successful, a firm may employ one or more of these strategies: cost leadership (being the lowest-cost producer of the good), product differentiation (providing different features or services), and focus (investing resources on a particular segment of the industry).
+			</p>
+			<br />
+			<p>
+				Moreover, analysts should pay attention to the quality of the <em>financial report</em> if the firm is public. A firm may be tempted to report higher earnings than its actual earnings.
+			</p>
+			<br />
+			<h3>
+				Step 2, Forecast Company Performance
+			</h3>
+			<br />
+			<p>
+				Analysts can forecast the company performance with elaborate models or subjective opinions. See "Forecast" for further information.
+			</p>
+			<br />
+			<h3>
+				Step 3, Select the Appropriate Valuation Model
+			</h3>
+			<br />
+			<p>
+				Analysts should consider the following factors when deciding the appropriate valuation model:
+			</p>
+			<br />
+			<ul>
+				<li>Does the model fit the characteristics of the company (e.g. pay dividend, have significant intangible asset, etc.)?</li>
+				<li>Are the quality input data available for the model uses?</li>
+				<li>Is the model suitable for the purpose of the analysis?</li>
+			</ul>
+            <br />
+            <h3>
+            	Step 4, Convert the Forecast into Valuation
+            </h3>
+            <br />
+            <p>
+            	Analysts calculate the equity value with the appropriate valuation model he/she chose in the previous step.
+            </p>
+            <br />
+            <h3>
+            	Step 5, Apply the Valuation Conclusion
+            </h3>
+            <br />
+            <p>
+            	If the valuation the analysts reached to is below (above) the current price of equity, the stock is overpriced (underpriced).
+            </p>
+		</div>
+        <div id="b2">
+        <h2> Forecasting a Company's Performance<a href="" class="p1" onclick="printDiv('b2')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+        <br />
+        <h3>Introduction</h3>
+        <br />
+        <p>
+        Valuation models require financial data (e.g., net income, dividends, cash flow) of the future. Analysts estimate these inputs by building a <strong>pro-forma financial statement</strong>, a fiancial statement of estimate amounts under the assumption that non-recurring or rare events do not occur. Ideally, the forecast horizon matches the investment period. In some cases, a firm's performance is cyclical because, for example, different temperatures of seasons affect the firm's sales differently. If so, investors should focus on <strong>normalized earnings</strong>, which excludes the effects of events or cyclicality. Analysts often start building a pro forma financial statement with estimating the firm's future revenue. 
+        </p>
+        <br />
+        <h3>Estimate Revenue</h3>
+        <br />
+        <p>
+        	Both macroeconomic factors and company-specific data (historical revenue growth, or new product introductions) are important inputs for forecasting revenue. Two simple methods of estimating future revenue are <em>growth relative to GDP growth approach</em>, and <em>market growth and market share approach</em>. In <strong>Growth relative to GDP approach</strong>, an analyst studies the historical relationship between company's performance and GDP; then, the analyst builds a projection of the company's revenue based on the predicted GDP growth. On the other hand, <strong>market growth and market share approach</strong> focues on an estimate of industry sales (market growth), and on the proportion of the company's revenue to the industry (market share).
+        </p>
+        <br />
+        <p>
+        	Estimating revenue solely based on the firm's past performance is making a risky assumption that the firm's future growth will be the same as in the past. An analyst who makes such an assumption should attempt to recognize <strong>inflection points</strong>, the instances where the firm's profitability changes. A newly-born firm tends to grow faster than a mature one. Estimating a firm's revenue becomes even more complicated when it plans to introduce a new product in the near future. Besides estimating the demands and prices for the product, an analyst must consider a <strong>cannibalization factor</strong>, which is the decrease in sales of exisiting products that become substituted by the new product.
+        </p>
+        <br />
+        <h3>Estimate Cost of Goods Sold (COGS)</h3>
+        <br />
+        <p>
+        	Since a large portion of cost of goods sold is variable for most of the firms, a rough estimation can be made by studying the historical ratios of COGS to revenue. Then,
+        </p>
+        <br />
+        <p>
+        	forecast COGS = (historical COGS/revenue) `*` (estimate of future revenue)
+        </p>
+        <br />
+        <p> Or, since 1 - COGS/revenue is gross margin,
+        </p>
+        <br />
+        <p>
+        	forecast COGS = (1 - gross margin) `*` (estimate of future revenue)
+        </p>
+        <br />
+        <p>
+        	However, the gross margin may change because of changes in commodity price, or advances in technology. Changes in the company size may also be an important factor when <strong>economies of scale</strong> (the tendency that larger companies have higher gross margins) is evident in the industry. An analyst can improve the quality of a forecast of COGS by taking a closer look at the volume and price of a firm's inputs.
+        </p>
+        <br />
+        <p>
+        	When a commodity's price fluctuates, an analyst should check if the commodity is hedged with a forward or futures contract. A firm that is <strong>vertically integrated</strong> (owns/operates the business supply chain), then the firm is less sensitive to price changes. If a firm is neither vertically integrated nor hedged, an analyst may do a <em>scenario analysis</em>, where he/she finds an average of different COGS's based on different commodity prices. Furthermore, an analyst is advised to compare the gross margin with other competitors'. If the number differs greatly, the analyst should investigate and confirm that the difference is indeed a result of different business models, and not of an accounting fraud.
+        </p>
+        <br />
+        <h3>Estimate Selling General and Administrative Costs (SG&amp;A)</h3>
+        <br />
+        <p>
+        	Unlike COGS, a large portion of SG&amp;A for most firms are fixed cost. The best practice to forecast SG&amp;A is to divide it into different components--for example, research and development (R&amp;D), management salaries, selling and distribution costs, and utility cost. A firm's financial statement may provide detailed information on the different components of SG&amp;A costs.
+        </p>
+        <br />
+        <p>
+        	R&amp;D expenditures are often set by managers in the short run, and thus an analyst should check the historical trend and notes to the financial statement. Understanding the relationship between other fixed costs and inflation is crucial for building an accurate prediction. On the other hand, selling and distribution costs may be variable, and the estimation should be made based on the revenue estimation.
+        </p>
+        <br />
+        <h3> Estimate Financing Cost</h3>
+        <br />
+        <p>
+        	Besides the previous <em>gross debt</em> and <em>net interest expense</em>, an analyst should also use planned debt issuance, retirement, and the maturity structure of existing debt, all of which are disclosed in footnotes to financial statements. Once he/she estimates the gross debt, the analyst can calculate net debt and net interest expense:
+        </p>
+        <br />
+        <p>
+        	Net debt = Gross debt - Cash &amp; cash equivalents - short term expense
+        </p>
+        <p>
+        	Net interest expense = Gross interest expense - interest income on cash and short-term securities
+        </p>
+        <br />
+        <h3>Estimate Income Tax Expense</h3>
+        <br />
+        <p>
+        	An analyst should pay attention to the difference between <strong>statutory tax rate</strong> (the tax rate charged in the country where the firm is in) and <strong>effective tax rate</strong> (the ratio of the tax expense to the pre-tax income on the income statement). Firms provide such a reconciliation in the footnotes to financial statement. An analyst can use this information for forecasting the tax expense.
+        </p>
+        <br />
+        <h3>Model the Balance Sheet</h3>
+        <br />
+        <p>
+        	An analyst can build a pro forma balance sheet by making following adjustments:
+        </p>
+        <br />
+        <ul>
+        	<li>forecast retained earning = retained Earning + forecast net income - dividends</li>
+        	<li>forecast inventory = forecast annual COGS / inventory turnover, where <strong>inventory turnover</strong> = COGS / average inventory</li>
+            <li>forecast account receivable = (days sales outstanding) `*` forecast sales / 365, where <strong>days sales outstanding</strong> = account receivable / total credit sales `*` 365</li>
+            <li>forecast property, plant, and equipment (PP&amp;E): look at the company's operations and future plans and incorporate the information into an appropriate model; consider analyzing capital expenditure for <em>maintenance</em> separately from that for <em>growth</em>; depreciation and capital expenditure for<em>maintenance</em> may be increased by inflation rate due to increased replacement costs</li>
+        </ul>
+        </div>
+        <div id="b3">
+        <h2>The Divdend Discount Model<a href="" class="p1" onclick="printDiv('b3')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+        <br />
+        <h3>Uses</h3>
+        <br />
+        <p>
+        	<strong>Dividend Discount Models(DDMs)</strong> calculate the firm's value in a similar way we calculate the value of pension funds. We discount the future cash flow with a required rate of returns. Dividends are the cash flows for the DDMs. Since dividends are less volatile than earnings or free cash flows, the value derived from the model provides a long-term measure. Thus, <em>this model is appropriate for companies that have a history of dividend payments with a dividend payment policy that aligns with the company's growth</em>. On the other hand, other valuation models are recommended if the firm does not currently pay dividends or its dividends do not grow at a similar rate as their earnings.
+        </p>
+        <br />
+        <h3>The Gordon Growth Model</h3>
+        <br />
+        <p>
+        	One of the simplest DDMs is the <strong>Gordon Growth model (GGM)</strong>, which assumes that dividends grow at a constant rate indefinitely. This simplifying assumption allows us to express the DDM's with a simple formula:
+        </p>
+        <br />
+        <p>
+        	`V_0 = (D_0 * (1+g))/(r-g) = D_1/(r-g)`, where
+				<table>
+				<tr><td>`V_0`</td> <td>the fundamental value,</td></tr>
+				<tr><td>`D_0`</td> <td>the amount of the dividend just paid,</td></tr>
+				<tr><td>`D_1`</td> <td>the expected amount at the end of Year 1,</td></tr>
+				<tr><td>`r`</td> <td>the required rate on return, and</td></tr>
+				<tr><td>`g`</td> <td>the dividend growth rate</td></tr>
+				</table>
+        </p>
+        <br />
+        <h3>Spreadsheet Modeling</h3>
+        <br />
+        <p>
+        	A firm's dividends rarely grow at a steady rate, and so GGMs can be improved when an analyst uses a more flexible model. Spreadsheet modeling allows the uses of different growth rate and rate of return for each period for the foreseeable future. As long as the firm's going concern is valid in the foreseeable future, the analyst also needs to estimate the <strong>terminal value (TV)</strong>, the value of a stock at the last period of the analyst's growth rate estimate. This can be done with GGM, or other simplifying models.
+        </p>
+        </div>
+		<div id="b4">
+        	<h2>Free Cash Flow Valuation<a href="" class="p1" onclick="printDiv('b4')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+        	<br />
+        	<h3>Introduction</h3>
+            <br />
+            <p>
+            	The Dividend Discount Models (DDMs) are not appropriate for many stocks that pay few or no dividends. For this reason, many analysts prefer using <em>free cash flow models</em> to dividend discount models. The value of stocks can be estimated by forecasting <em>free cash flow to the firm (FCFF)</em> or <em>free cash flow to equity (FCFE)</em>. These models are especially useful when the stock's cash flow tracks profitability and the analyst takes a <em>corporate control perspective</em> because the "owner" of the firm will have discretion over the cash's distribution.
+            </p>
+            <br />
+            <p>
+            	However, it brings up another question: <em>How much</em> cash does the "owner" have control over? First, let us take the perspective of all investors (bondholders and shareholders) combined. A firm collects cash in the form of revenue and spends cash in the form of operating expenses (including taxes, but exluding interest expenses, which will be paid to bondholders), working capital (inventories and receivables), and fixed capital investment (long-term investment in PP&amp;E). The remaining cash, avaialbe to the bondholders and shareholders, is <em>free cash flow to the firm (FCFF)</em>. The firm will spend some of FCFF to pay interest to bondholders, and then borrow more money or pay principal. The result, the cash available to shareholders, is <em>free cash flow to equity (FCFE)</em>. Free cash valuations estimate the value of stocks by discounting either FCFF or FCFE at the <em>Weighted Average of Cost of Capital (WACC)</em> or the <em>required rate of returns to equity</em>, respectively.
+            </p>
+            <br />
+            <h3>Valuation with Free Cash Flow to the Firm</h3>
+            <br />
+            <p>
+            	As stated in the introduction, <strong>free cash flow to the firm (FCFF)</strong> is the cash available to all of the firm's investors (stockholders and bondholders) after the firm buys and sells products, provides services, pays its cash operating expansion, and makes short- and long-term investments. An analyst can use the following formula to compute FCFF:
+            </p>
+            <br />
+            <p>
+            	FCFF = NI + NCC + [Int `*` (1 - tax rate)] - FCInv - WCInv + preferred stock dividends, where
+                <table>
+				<tr><td>NI</td> <td>net income (after preferred dividends are paid out),</td></tr>
+				<tr><td>NCC</td> <td>noncash charges,</td></tr>
+				<tr><td>Int</td> <td>interest expense,</td></tr>
+				<tr><td>FCInv</td> <td>fixed capital investment, and</td></tr>
+				<tr><td>WCInv</td> <td>working capital investment</td></tr>
+				</table>
+            </p>
+            <br />
+            <p>
+            	<strong>Noncash charges (NCC)</strong> are expenses that reduce net income but do not result in an outflow of cash. NCC include depreciation, amortization of intangibles, noncash expenses for reconstructuring, amortization of a bond discount, and deferred tax liabilities.
+            </p>
+            <br />
+            <p>
+            	<em>Fixed capital investments (FCInv)</em> should be subtracted from net income since they do not reduce net income but drain cash reserve. However, we should deduct the cash inflow from selling a fixed asset. In general, FCInv = capital expenditures - proceeds from sales of long-term assets, where capital expenditures = ending <em>gross</em> PP&amp;E - beginning <em>gross</em> PP&amp;E.
+            </p>
+            <br />
+            <p>
+            	<em>Working capital investment (WCInv)</em> is a net change in working capital, excluding cash, cash equivalents, notes payable, and the current portion of long-term debt.
+            </p>
+            <br />
+            <p>
+            	Because the valuation discounts a series of FCFF, an analyst needs to forecast the future FCFF's. There are <em>two</em> ways of doing it. First, an analyst may find the past few FCFF's and then calculate the average growth rates. Then, the analyst will assume the FCFF will continue to grow at the average rate. The value of firm can be then found by the following formula, which resembles that of Gordon Growth Model in DDM:
+            </p>
+            <br />
+            <p>
+            	`V_f = (FCFF_1)/(WAC C - g)` + nonoperating asset, where
+                <table>
+				<tr><td>`V_f`</td> <td>value of the firm,</td></tr>
+				<tr><td>`FCFF_1`</td> <td>expected free cash flow to the firm in one year,</td></tr>
+				<tr><td>`WAC C`</td> <td>weighted average cost of capital</td></tr>
+				<tr><td>`g`</td> <td>constant growth rate in FCFF, and</td></tr>
+                <tr><td colspan = "2">"non operating asset" includes excess cash and marketable security, and land held for investment.</td></tr>
+				</table>
+            </p>
+            <br />
+            <p>
+            	The second, more realistic method is to calculate the future FCFF from the <em>pro-forma balance sheet</em>. An analyst can calculate the next few years with this method, and then calculate the <em>terminal value</em> with the first method. The series of FCFF's are again discounted at WACC, which gives the value of the value of the firm.
+            </p>
+            <br />
+            <p>
+            	Once an analyst calculates the value of the firm (`V_f`), the value of equity (`V_e`) can be found with the following formula:
+            </p>
+            <br />
+            <p>
+            	`V_e` = `V_f` - `V_d`, where
+                <table>
+				<tr><td>`V_d`</td> <td>market value of debt</td></tr>
+                </table>
+            </p>
+            <br />
+            <h3>Valuation with Free Cash Flow to Equity</h3>
+            <br />
+            <p>
+            	<strong>Free cash flow to equity (FCFE)</strong> is the cash available to common shareholders after funding optimal requirements, working capital needs, and debt financing. The value can be calculated directly from FCFF:
+            </p>
+            <br />
+			<p>
+            	FCFE = FCFF - Int `*` (1 - tax rate) + net borrowing - preferred stock dividends
+            </p>
+            <br />
+            <p>
+            	Valuation FCFE also needs forecasting the future FCFE's, and the forecasts can be built with either of the two methods. Note that FCFE's growth rate should be calculated separately from FCFF's as the two rates are often different.
+            </p>
+            <br />
+            <p>
+            	Then, the value of equity (`V_e`) can be found by discounting the future FCFE's with the <em>required return on equity</em>, and then adding nonoperating asset. Since FCFE is the cash flows to equity, not the whole firm, analysts discount it with the return linked only to equity. 
+            </p>
+            <br />
+            <p>
+            	FCFE is more straightforward to use since analysts do not have to subtract the market value of debt. However, FCFE is not appropriate to use when the firm has negative or volatile FCFE.
+            </p>
+        </div>
+        <div id="b5">
+        	<h2>Market-Based Valuation<a href="" class="p1" onclick="printDiv('b5')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+        	<br />
+        	<h3>Introduction</h3>
+            <br />
+            <p>
+            	One disadvantage of the DDM and free cash flow models is that the accuracy of the estimates is highly depndent on the correct estimate of the required rate of return, or WACC, which is difficult to predict and may change over time. Market-based valuations estimate the intrinsic value (IV) of a stock by first identifying other firms that are in the same industry. It is important to choose the appropriate <em>benchmark</em> for a stock, as different stock has different growth rates, profit margins and risks, which affect the ratio. Then, analysts calculate a ratio of its current market value to a fundamental value (e.g. earnings per share, sales per share, etc.) for each firm in the industry. They then compute the average of the ratio, or the <strong>benchmark value of a multiple</strong>. Finally, the analysts compare the ratio of the stock to the benchamark ratio and conclude whether the stock is underpriced or overpriced. The economic rationale for this method is the <strong>Law of One Price</strong>, which asserts that the value of a dollar of earnings or a dollar of book value, for example, should be the same across stocks in the same or similar industry.
+            </p>
+            <br />
+            <h3>Price Multiples</h3>
+	    	<br />
+	    	<p>
+				Price multiples are ratios of a common stock's market price to some fundamental variable. The most popular ratios are P/E, P/B, P/S, and P/CF. They all have advantages and disadvantages for using it in valuation.
+	    	</p>
+            <br />
+            <h3>P/E Ratio</h3>
+            <br />
+            <h4>Definition</h4>
+            <p>
+            	Market price of a stock divided by earnings per share (EPS)
+            </p>
+            <br />
+            <h4>Advantages in using it in valuations</h4>
+            <ul>
+            	<li>Popular in the investment community</li>
+                <li>Empirical research shows that P/E differences are significantly related to long-run average stock returns</li>
+            </ul>
+            <br />
+            <h4>Disadvantages in using it in valuations</h4>
+            <ul>
+            	<li>Earnings can be negative, which produces a meaningless P/E ratio</li>
+                <li>Earnings have a high volatility, which makes it difficult to interpret for analysis</li>
+                <li>It is relatively easy to manipulate earnings</li>
+            </ul>
+            <br />
+            <h4>Adjustment</h4>
+            <p>
+            	Estimating the appropriate earnings measure is important when using P/E for valuation. Non-recurring (one-time) events and seasonality often contribute to the volatility of the earnings.
+            </p>
+            <ul>
+            	<li><strong>Underlying earnings</strong>: exclude non-recurring components of earnings, including gains and losses from asset sales, asset write-downs, provisions for future losses, and changes in accounting estimates</li>
+                <li><strong>Normalized earnings</strong>: adjust the earnings per share (EPS) for cyclicality; to do so, we calculate the average of the returns on equity (ROE) for last four quarters and multiply it by the last quarter</li>
+            </ul>
+            <br />
+            <h4>Justified P/E ratio</h4>
+            <p>
+            	As stated in Dividend Discount Model (DDM), Gordon Growth model estimates a stock's value based on the assumption of constant growth rates and risk (the required rates of returns). <strong>Justified P/E ratio</strong> uses the valuation estimate as the "P" and divide by E. With some cancelations, we can reach to the following formula
+            </p>
+                <br />
+                `(P/E)_j = ((1-b)*(1+g))/(r-g)`, where
+                <table>
+				<tr><td>`b`</td> <td><strong>retention ratio</strong>, the ratio that a firm keeps earnings, rather than paying as a dividend</td></tr>
+				<tr><td>`r`</td> <td>required rate of return</td></tr>
+				<tr><td>`g`</td> <td>dividend growth rate</td></tr>
+				</table>
+                <br /> 
+            <p>
+                This shows:
+            </p>
+            <ul>
+            	<li>The <em>higher</em> the growth rate `g` is, the higher the P/E may be, and</li>
+                <li>The <em>lower</em> the required rate of return `r` is, the higher the P/E may be</li>
+            </ul>
+            <br />
+            <h3>P/E to Growth (PEG) Ratio</h3>
+            <br />
+            <h4>Definition</h4>
+            <p>
+            	P/E ratio divided by expected growth rate
+            </p>
+            <br />
+            <h4>Advantages in using it in valuations</h4>
+            <ul>
+            	<li>standardizes the P/E ratio for stocks with different expected growth rates</li>
+            </ul>
+            <br />
+            <h4>Disadvantages in using it in valuations</h4>
+            <ul>
+            	<li>The relationship between P/E and g is not linear</li>
+                <li>Does not account for different levels of risk (required rates of returns)</li>
+                <li>The growth rate may change as a company matures</li>
+            </ul>
+            <br />
+            <h3>P/B Ratio</h3>
+            <br />
+            <h4>Definition</h4>
+            <p>
+            	Market price of a stock divided by equity book value per share (BVPS)
+            </p>
+            <br />
+            <h4>Advantages in using it in valuations</h4>
+            <ul>
+            	<li>Book value per share is usually positive and more stable than EPS</li>
+                <li>An appropriate measure of net asset value for firms that primarily hold liquid assets</li>
+            </ul>
+            <br />
+            <h4>Disadvantages in using it in valuations</h4>
+            <ul>
+            	<li>Do not reflect the value of intangible economic assets, such as human capital</li>
+                <li>P/B may not stay constant in an industry if firms' business models differ with their sizes</li>
+                <li>Different account rules apply for accounting, and BVPS is relatively easy to manipulate</li>
+            </ul>
+            <br />
+            <h3>P/S Ratio</h3>
+            <br />
+            <h4>Definition</h4>
+            <p>
+            	Market price per share divided by sales per share
+            </p>
+            <br />
+            <h4>Advantages in using it in valuations</h4>
+            <ul>
+            	<li>Sales revenue is always positive</li>
+                <li>Not easy to manipulate or distort sales revenue</li>
+                <li>Less volatile than the P/E ratio</li>
+            </ul>
+            <br />
+            <h4>Disadvantages in using it in valuations</h4>
+            <ul>
+            	<li>High growth in sales does not necessarily indicate high operating profits because companies have different cost structures</li>
+            </ul>
+            <br />
+            <h3>P/CF Ratio</h3>
+            <br />
+            <h4>Definition</h4>
+            <p>
+            	Market price per share divided by cash flow per share; cash flow can be earnings-plus-noncash-charges (CF), adjusted cash flow (adjusted CFO), free cash flow to equity (FCFE), or earnings before interest, taxes, depreciation, and amortization (EBITDA).
+            </p>
+            <br />
+            <h4>Advantages in using it in valuations</h4>
+            <ul>
+                <li>Not easy to manipulate or distort sales revenue</li>
+                <li>More stable than P/E ratio</li>
+            </ul>
+            <br />
+            <h4>Disadvantages in using it in valuations</h4>
+            <ul>
+            	<li>Theoretically, free cash flow to equity (FCFE) is preferrable to operating cash flow, but FCFE is more volatile</li>
+            </ul>
+            <br />
+            <h3>EV/EBITDA</h3>
+            <br />
+            <h4>Definition</h4>
+            <p>
+            	<strong>Enterprise value (EV)</strong> divided by <strong>Earnings before interest, taxes, depreciation, and amortization (EBITDA)</strong>
+            </p>
+            <br />
+            <h4>Enterprise Value</h4>
+            <p>
+            	This represents a total company value. Analysts compute the value with the following formula:
+            </p>
+            <p>
+            	EV = market value of common stock + market value of preferred equity + market value of debt + minority interest - cash and investments
+            </p>
+            <p>
+            	The reason why we subtract <em>cash and investment</em> is that an acquirer's net price paid for an acquisition will be reduced by the target's liquid assets.
+            </p>
+            <br />
+            <h4>Earnings before interest, taxes, depreciation, and amortization (EBITDA)</h4>
+            <p>
+            	EBITA represents a flow to both equity and debt. The value can be found with the following formula:
+            </p>
+            <p>
+            	<em>Recurring</em> earnings from operations + interest + taxes + depreciation + amortization
+            </p>
+            <br />
+            <h4>Advantages in using it in valuations</h4>
+            <ul>
+            	<li>Can be applied to compare firms with different degrees of financial leverage</li>
+                <li>EBITDA is usually positive</li>
+            </ul>
+            <br />
+            <h4>Disadvantages in using it in valuations</h4>
+            <ul>
+            	<li>It does not take account of a different levels of risks, and thus still requires a careful selection as the banchmark</li>
+            </ul>
+        </div>
+        <div id="b6">
+        	<h2>Residual Income Valuation<a href="" class="p1" onclick="printDiv('b6')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+        	<br />
+        	<h3>Introduction</h3>
+            <br />
+            <p>
+            	Different stocks have different levels of risks, and an equity investor expects the required rate of return, which matches the level of risks. <strong>Residual income (RI)</strong> is the net earnings after the <em>opportunity cost</em>. Overall, the residual income can be computed by the following formula:
+            </p>
+            <p>
+            	Residual Income = Net Income - Equity Capital `*` cost of equity (or, the required rate of return)
+            </p>
+            <br />
+            <p>
+            	To estimate the intrinsic value, analysts start from the current book value and add discounted the future stream of the residual incomes. The formula, is:
+            </p>
+            <br />
+            <p>
+            	`V_0 = B_0 + {(RI_1)/(1+r)^1 + (RI_2)/(1+r)^2 + (RI_3)/(1+r)^3 + ...}`, where
+                <table>
+				<tr><td>`V_0`</td> <td>the intrinsic value,</td></tr>
+				<tr><td>`B_0`</td> <td>the current book value of equity,</td></tr>
+				<tr><td>`RI_t`</td> <td>the residual income at time t, and</td></tr>
+				<tr><td>`r`</td> <td>the required rate on return</td></tr>
+				</table>
+            </p>
+            <br />
+            <h3>Advantages in using it in valuations</h3>
+            <br />
+            <ul>
+            	<li>A significant portion of the valuation is the book value, and so a big error in the valuation is less likely. This makes the model ideal for firms with highly uncertain terminal values</li>
+                <li>The model is applicable to firms with no dividend payment or volatile cash flows</li>
+                <li>The model focuses on economic profitability rather than just on accounting profitability</li>
+            </ul>
+            <br />
+            <h3>Disadvantages in using it in valuations</h3>
+            <br />
+            <ul>
+            	<li>The model is highly dependent on accounting data, which might have been manipulated by management</li>
+                <li>If the expected residual incomes are negative, the estimated intrinsic value will be below the book value, but the price is rarely below the book value in the real world</li>
+            </ul>
+        </div>
+    </div>
+</div>
+	<div id="Footer1">
+		<p>
+		Caution: Not all information and calculation are checked for accuracy.<br />
+		You are advised to validate the facts before using.<br/>
+		All rights reserved <br />
+		&copy; 2015 FinanceScript <br>
+		</p>
+	</div>
+    <style "text/css">
+	select {
+		width: 150px;
+	}
+	
+	input {
+		width: 150px;
+	}
+	
+	input.btn {
+		width: 10%;
+		height: 25px;
+		background-color: #282828;
+		color: white;
+		border-color: orange;
+		font-family: Vrinda;
+		vertical-align: center;
+		margin-left: 10px;
+	}
+	table td {
+		text-align: left !important;
+	}
+
+	table.formFFTable td{
+		text-align: left;
+		width: 260px;
+	}
+	
+	</style>
+</body>
+</html>

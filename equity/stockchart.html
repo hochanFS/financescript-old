@@ -1,0 +1,327 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+	<meta name="keywords" content="Finance, FinanceScript, fscpt, Beta, Analytic, Analysis" />
+	<meta name="description" content="FinanceScript provides quantitative financial analysis" />
+	<title> FinanceScript </title>
+	<link rel="stylesheet" type="text/css" href="../css/design.css" />
+	<link rel="shortcut icon" href="../images/titleIcon.ico" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script language="JavaScript">	
+	function start(){
+    getData();
+    document.getElementById("timeSpan").selectedIndex = "0";
+	document.getElementById("chartType").selectedIndex = "0";
+	document.getElementById("scale").selectedIndex = "0";
+	}
+	
+	function getData() {
+	var url = "http://query.yahooapis.com/v1/public/yql";
+	var symbol = $("#symbol").val();
+	var data = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
+
+	$.getJSON(url, 'q=' + data + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env")
+    .done(function (data) {
+
+         $("#result").text(data.query.results.quote.Open);
+         $("#chg").text(data.query.results.quote.PercentChange);
+         $("#bid").text(data.query.results.quote.LastTradePriceOnly);
+         $("#ask").text(data.query.results.quote.Ask);
+         $("#vol").text(data.query.results.quote.Volume);
+
+         if(data.query.results.quote.PercentChange.indexOf("+") != -1){
+
+            document.getElementById("chg").className = "greenText";
+        }
+         else{
+		 
+            document.getElementById("chg").className = "redText";
+        }
+
+	}).fail(function (jqxhr, textStatus, error) {
+		var err = textStatus + ", " + error;
+        $("#result").text('Request failed: ' + err);
+	});
+	}
+	
+	function sendRequest() {
+		getData();
+	}
+	
+	function drawChart() {
+		var stringA = "http://chart.finance.yahoo.com/z?s="
+		var stringB = "";
+		var stringC = "";
+		var stringD = "";
+		stringA += $("#symbol").val();
+		var time = document.getElementById("time");
+		var timeIndex = time.selectedIndex;
+		switch(timeIndex) {
+		case 0:
+			stringB = "&t=1d";
+			break;
+		case 1:
+			stringB = "&t=5d";
+			break;
+		case 2:
+			stringB = "&t=1m";
+			break;
+		case 3:
+			stringB = "&t=6m";
+			break;
+		case 4:
+			stringB = "&t=1y";
+			break;
+		case 5:
+			stringB = "&t=my";
+			break;
+		}
+		stringA += stringB;
+		var chartType = document.getElementById("chartType");
+		var chartTypeIndex = chartType.selectedIndex;
+		switch(chartTypeIndex) {
+		case 0:
+			stringC = "";
+			break;
+		case 1:
+			stringC = "&q=b";
+			break;
+		case 2:
+			stringC = "&q=c";
+			break;
+		}
+		stringA += stringC+"&l=on&z=l&p=s,v";
+		var ma = document.getElementById("movingAverage");
+		var maIndex = ma.selectedIndex;
+		if (maIndex == 1){
+			stringD = ",m50,m200";
+		}
+		stringA += stringD;
+		var newChart = document.getElementById("imgChart");
+		newChart.src = stringA;
+	}
+
+	function CheckEnter(e) {
+		if ((e.keyCode && e.keyCode==13) || (e.which && e.which==13)) {
+			return sendRequest();
+		}
+		return true;
+	}       
+	</script>
+</head>
+
+<body onload="start();">
+	<header>
+		<div id="header">
+			<div id="logo">
+			<h1> <a href="../default.html"> <img src="../images/Logo.png" alt="FinanceScript" width="90" height="80"/> </a> </h1>
+			</div>
+			<div id="twitter">
+			<a href="https://twitter.com/FinanceScript" target="_blank"> <img src="../images/TwitterLogo.png" alt="" width="32" height="30"/></a>
+			</div>
+			<div id="linkedin">
+			<a href="https://www.linkedin.com/company/financescript-com?trk=company_logo" target="_blank"> <img src="../images/LIlogo.png" alt="" width="30" height="30"/></a>
+			</div>
+		</div>
+		<div id="subheader">
+			<div id="navset">
+			<ul id="nav">
+				<li id="lemon"><a> About </a>
+					<ul class="sub1">
+						<li><a href="../about/default.html"> About FinanceScript </a></li>
+						<li><a href="../about/contact.html"> Contact Us </a></li>
+					</ul>
+				</li>
+				<li id="green"><a> Fixed Income </a>
+					<ul class="sub1">
+						<li><a href="../fixed/invest.html"> Investing in Bonds </a></li>
+						<li><a href="../fixed/credit.html"> Credit Analysis </a></li>
+						<li><a href="../fixed/abs.html"> Asset Backed Securities </a></li>
+					</ul>
+				</li>
+				<li id="blue"><a> Equity </a>
+					<ul class="sub1">
+						<li><a href="../equity/invest.html"> Investing in Equities </a></li>
+						<li><a href="../equity/stockchart.html"> Stock Chart </a></li>
+						<li><a href="../equity/valuation.html"> Equity Valuation </a></li>
+					</ul>
+				</li>
+				<li id="purple"><a> Derivatives </a>
+					<ul class="sub1">
+						<li><a href="../derivatives/invest.html"> About Derivatives </a></li>
+						<li><a href="../derivatives/forwardfutures.html"> Forwards / Futures </a></li>
+						<li><a href="../derivatives/option.html"> Options </a></li>
+						<li><a href="../derivatives/swap.html"> Swaps </a></li>
+					</ul>
+				</li>
+				<li id="orange"><a> Others </a>
+					<ul class="sub1">
+						<li><a href="../others/corpfinance.html"> Corporate Finance </a></li>
+						<li><a href="../others/realestate.html"> Real Estate Investment </a></li>
+						<li><a href="../others/privateequity.html"> Private Equities </a></li>
+						<li><a href="../others/commodity.html"> Commodity </a></li>
+						<li><a href="../others/portfolio.html"> Portfolio Management </a></li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</header>
+<div id="mainbody">
+	<div id="stockchart">
+		<form id="stockForm">
+		<table>
+			<tr>
+				<td class="formTitle"> Stock Quotes </td>
+				<td> <input name="TxtQuote" type="text" id="symbol" maxlength="15" value="^GSPC"></td> 
+			</tr>
+			<tr>
+				<td class="formTitle"> Time Span </td>
+				<td>
+					<select id="time">
+						<option value="0">1-day</option>
+						<option value="1">5-days</option>
+						<option value="2">1-month</option>
+						<option value="3">6-months</option>
+						<option value="4">1-year</option>
+						<option value="5">MAX</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle"> Chart Type </td>
+			<td>
+				<select id="chartType">
+					<option value="0">Line</option>
+					<option value="1">Bar</option>
+					<option value="2">Candlestick</option>
+				</select>
+			</td>
+			</tr>
+			<tr>
+				<td class="formTitle"> Chart Scale </td>
+				<td>
+					&nbsp;&nbsp;Logarithmic
+				</td>
+			</tr>
+			<tr>
+				<td class="formTitle"> Moving Averages </td>
+				<td>
+					<select id="movingAverage">
+						<option value="0">Off</option>
+						<option value="1">On</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<input class="btn" name="button" type="button" id="submit" value="Draw" onclick="sendRequest();drawChart();">
+		<div id = "divChart">
+			<img id="imgChart" src="http://chart.finance.yahoo.com/z?s=^gspc&t=1d&l=on&z=l&p=s,v" border="0" />
+		</div>
+		</form>
+		<br />
+	</div>
+	<div id = "statistics">
+		<table>
+		<tr><td class="formTitle">Current price</td><td><span id="bid"></span></td></tr>
+		<tr><td class="formTitle">Ask price</td><td><span id="ask"></span></td></tr>
+		<tr><td class="formTitle">Open price</td><td><span id="result"></span></td></tr>
+		<tr><td class="formTitle">One-day %change</td><td><span id="chg" class="greenText"></span></td></tr>
+		<tr><td class="formTitle">Volume</td><td><span id="vol"></span></td></tr>
+		</table>
+	</div>
+	
+</div>
+	<style "text/css">
+	
+	body {
+		color: white;
+	}
+	
+	div#stockchart {
+		clear: both;
+		float: left;
+		margin:0;
+		width: 49%;
+		height: 500px;
+	}
+			
+	div#stockchart h2{
+		font-family: Vrinda;
+		font-size: 1.4em;
+	}
+			
+	#service td {
+		width: 16%;
+	}
+		
+	#symbol {
+		width: 150px;
+	}
+			
+	.formTitle {
+		color: orange;
+		font-family: Vrinda;
+		padding-right: 10px;
+	}
+			
+	div#stockchart input{
+		margin-left: 5px;
+	}
+			
+	div#stockchart select{
+		margin-left: 5px;
+		width: 150px;
+	}
+			
+	input.btn {
+		width: 40%;
+		height: 25px;
+		background-color: #282828;
+		color: white;
+		border-color: orange;
+		font-family: Vrinda;
+		vertical-align: center;
+	}
+	
+	.greenText {
+		color: green;
+	}
+	
+	.redText {
+		color: red;
+	}
+	
+	div#divChart {
+		margin-top: 10px;
+	}
+	
+	div#statistics{
+		float: left;
+		width: 49%
+		margin: 0;
+	}
+	
+	div#statistics td{
+		padding-right: 10px;
+	}
+	
+	div#statistics h2{
+		font-size: 1.4em;
+		font-color: orange;
+	}
+	
+	</style>
+	<div id="Footer1">
+		<p>
+		Caution: Not all information and calculation are checked for accuracy.<br />
+		You are advised to validate the facts before using.<br/>
+		All rights reserved <br />
+		&copy; 2015 FinanceScript <br>
+		</p>
+	</div>
+</body>
+</html>

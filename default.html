@@ -1,0 +1,470 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta name="keywords" content="Finance, FinanceScript, fscpt, Beta, Analytic, Analysis" />
+	<meta name="description" content="FinanceScript provides quantitative financial analysis" />
+	<title> FinanceScript </title>
+	<link rel="stylesheet" type="text/css" href="css/design.css" />
+	<link rel="shortcut icon" href="images/titleIcon.ico" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="header">
+			<div id="logo">
+			<h1> <a href="http://www.financescript.com"> <img src="images/Logo.png" alt="FinanceScript" width="90" height="80"/> </a> </h1>
+			</div>
+			<div id="twitter">
+			<a href="https://twitter.com/FinanceScript" target="_blank"> <img src="images/TwitterLogo.png" alt="" width="32" height="30"/></a>
+			</div>
+			<div id="linkedin">
+			<a href="https://www.linkedin.com/company/financescript-com?trk=company_logo" target="_blank"> <img src="images/LIlogo.png" alt="" width="30" height="30"/></a>
+			</div>
+		</div>
+		<div id="subheader">
+			<div id="navset">
+			<ul id="nav">
+				<li id="lemon"><a> About </a>
+					<ul class="sub1">
+						<li><a href="../about/default.html"> About FinanceScript </a></li>
+						<li><a href="../about/contact.html"> Contact Us </a></li>
+					</ul>
+				</li>
+				<li id="green"><a> Fixed Income </a>
+					<ul class="sub1">
+						<li><a href="../fixed/invest.html"> Investing in Bonds </a></li>
+						<li><a href="../fixed/credit.html"> Credit Analysis </a></li>
+						<li><a href="../fixed/abs.html"> Asset Backed Securities </a></li>
+					</ul>
+				</li>
+				<li id="blue"><a> Equity </a>
+					<ul class="sub1">
+						<li><a href="../equity/invest.html"> Investing in Equities </a></li>
+						<li><a href="../equity/stockchart.html"> Stock Chart </a></li>
+						<li><a href="../equity/valuation.html"> Equity Valuation </a></li>
+					</ul>
+				</li>
+				<li id="purple"><a> Derivatives </a>
+					<ul class="sub1">
+						<li><a href="../derivatives/invest.html"> About Derivatives </a></li>
+						<li><a href="../derivatives/forwardfutures.html"> Forwards / Futures </a></li>
+						<li><a href="../derivatives/option.html"> Options </a></li>
+						<li><a href="../derivatives/swap.html"> Swaps </a></li>
+					</ul>
+				</li>
+				<li id="orange"><a> Others </a>
+					<ul class="sub1">
+						<li><a href="../others/corpfinance.html"> Corporate Finance </a></li>
+						<li><a href="../others/realestate.html"> Real Estate Investment </a></li>
+						<li><a href="../others/privateequity.html"> Private Equities </a></li>
+						<li><a href="../others/commodity.html"> Commodity </a></li>
+						<li><a href="../others/portfolio.html"> Portfolio Management </a></li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</header>
+	<div id="mainbody">
+		<div id="SectorWrap">
+			<div id="SectorContext">
+			    <table>
+				<tr>
+				<td id="cxly" class="whiteBG">
+					<p >Discretionary</p>
+					<p id="axly"></p>
+				</td>
+				<td id="cxlp" class="whiteBG">
+					<p>Staples</p>
+					<p id="axlp"></p>
+				</td>
+				<td id="cxle" class="whiteBG">
+					<p>Energy</p>
+					<p id="axle"></p>
+				</td>
+				<td id="cxlf" class="whiteBG">
+					<p>Financials</p>
+					<p id="axlf"></p>
+				</td>
+				<td id="cxlv" class="whiteBG">
+					<p>Health Care</p>
+					<p id="axlv"></p>
+				</td>
+				<td id="cxli" class="whiteBG">
+					<p>Industrials</p>
+					<p id="axli"></p>
+				</td>
+				<td id="cxlb" class="whiteBG">
+					<p>Minerals</p>
+					<p id="axlb"></p>
+				</td>
+				<td id="cxlk" class="whiteBG">
+					<p>Technology</p>
+					<p id="axlk"></p>
+				</td>
+				<td id="cxlu" class="whiteBG">
+					<p>Utilities</p>
+					<p id="axlu"></p>
+				</td>
+				</table>
+			</div>
+		</div>
+		<div id="leftbody">
+		<div id="Econwrap">
+			<h2>Economy Today</h2>
+			<div id="Econcontext">
+				<br />
+				<table>
+				<tr>
+					<td class="tableTitle">S&amp;P500:</td>
+					<td id="aspx"></td>
+					<td id="snp" class="greenText"></td>
+				</tr>
+				<br />
+			    <table>
+				<tr>
+					<td class="tableTitle">Unemployment Rate (U3):</td>
+					<td id="u3"><a href="http://www.bls.gov/news.release/empsit.t15.htm" target"_blank">4.2%</a></td>
+					<td> October, 2017 </td>
+				</tr>
+				<tr>
+					<td class="tableTitle">Unemployment Rate (U6):</td>
+					<td id="u6"><a href="http://www.bls.gov/news.release/empsit.t15.htm" target"_blank">8.3%</a></td>
+					<td> October, 2017 </td>
+				</tr>
+				<tr>
+					<td class="tableTitle">Annual R-GDP Growth Rate:</td>
+					<td id="u6"><a href="http://projects.wsj.com/econforecast/#ind=gdp&r=20" target"_blank">2.6%</a></td>
+					<td> Q2, 2017 </td>
+				</tr>
+				<tr>
+					<td class="tableTitle">Projected R-GDP Growth Rate:</td>
+					<td id="u6"><a href="http://projects.wsj.com/econforecast/#ind=gdp&r=20" target"_blank">2.4%</a></td>
+					<td> Q3, 2017 </td>
+				</tr>
+				</table>
+			</div>
+		</div>
+		<div id="Researchwrap">
+			<h2> Code &amp; Sample Research </h2>
+			<div id="Rresearch">
+				<ul>
+					<li><a href="research/YELP.pdf" target="_blank">[Equity] Yelp Inc. <span class="newsdate">10/30/15</span></a></li>
+                    <li><a href="code/r_capm.pdf" target="_blank">[Code: R] The CAPM Beta Estimation <span class="newsdate">09/19/15</span></a></li>
+				</ul>
+			</div>
+			<style "text/css">
+			.greenBG {
+				background-color: rgb(69, 118, 44);
+			}
+			
+			.redBG {
+				background-color: rgb(132, 3, 15);
+			}
+			
+			.whiteBG {
+				background-color: #282828;	
+			}
+			
+			.whiteBG p{
+				color: white;
+			}
+			
+			div#SectorWrap {
+				clear: both;
+				width: 100%;
+				margin-top: 10px;
+			}
+			
+			div#SectorWrap table {
+				padding-top: 5px;
+				width: 100%;
+				text-align: center;
+				font-weight: bold;
+				font-family: Vrinda;
+			}
+			
+			div#SectorWrap td {
+				width: 10%;
+				margin-right: 1%;
+				line-height: 1.5em;
+			}
+			
+			div#SectorContext {
+				width: 100%;
+				height: 90px;
+				margin-top: 0;
+				margin-left: 0;
+				background-color: #181818;
+			}
+			
+			.tableTitle {
+				color: orange;
+			}
+			
+			td {
+				color: white;
+				padding-right: 5px;
+			}
+			
+			p {
+				color: white;
+			}
+			
+			table a{
+				color: #ffff82;
+				text-decoration: none;
+			}
+			
+			table a:hover{
+				color: white;
+			}
+			
+			.greenText{
+				color: green;
+			}
+			
+			.redText{
+				color: red;
+			}
+			
+			.whiteText{
+				color: white;
+				text-align: center;
+			}
+			
+			div#leftbody {
+				clear: both;
+				float: left;
+				width: 50%;
+			}
+			
+			div#Econwrap {
+				width: 100%;
+				height: 375px;
+				padding-top: 5px;
+				background-color: #282828;
+			}
+			
+			div#Econwrap h2 {
+				background-color: #282828;
+				margin-bottom: -3px;
+				color: white;
+				text-align: center;
+			}
+			
+			div#Econcontext {
+				width: 100%;
+				height: 330px;
+				margin-top: 15px;
+				margin-left: 0;
+				background-color: #181818;
+			}
+			
+			div#Researchwrap {
+				width: 100%;
+				height: 270px;
+				padding-top: 5px;
+				background-color: rgb(66, 111, 71);
+			}
+			
+			div#Researchwrap h2 {
+				background-color: rgb(66, 111, 71);
+				text-align: center;
+				color: white;
+				display: block;
+				margin-bottom: -3px;
+			}
+			
+			div#Rresearch {
+				width: 100%;
+				height: 225px;
+				margin-top: 15px;
+				margin-left: 0;
+				background-color: rgb(191, 225, 170);
+				overflow: auto;
+			}
+			
+			div#Rresearch li {
+				border-bottom: solid black thin;
+			}
+			
+			div#Rresearch li a {
+				Text-decoration: none;
+				color: black;
+				display: block;
+				height: 30px;
+				padding-left: 10px;
+				padding-top: 10px;
+			}
+			
+			div#Rresearch li a:hover {
+				background-color: #282828;
+				color: white;
+			}
+		
+			div#Rresearch li .newsdate {
+				color: rgb(191, 225, 170);
+			}
+			</style>
+		</div>	
+		</div>
+	<script>
+		var SECTORurl = "https://www.alphavantage.co/query?function=SECTOR&apikey=779W3TIU0AXFK698"
+		var sector = new XMLHttpRequest();
+		var myIDs = ["axly", "axlp", "axle", "axlf", "axlv", "axli", "axlb", "axlk", "axlu"]
+		var tableIDs = ["cxly", "cxlp", "cxle", "cxlf", "cxlv", "cxli", "cxlb", "cxlk", "cxlu"]
+		var MatchingKeys = ["Consumer Discretionary",
+							"Consumer Staples",
+							"Energy",
+							"Financials",
+							"Health Care",
+							"Industrials",
+							"Materials",
+							"Information Technology",
+							"Utilities"]
+		
+		sector.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var STresponse = JSON.parse(sector.responseText);
+				var SECTORS = STresponse["Rank A: Real-Time Performance"];
+				var SECTORS2 = STresponse["Rank F: Year-to-Date (YTD) Performance"];
+				//console.log(SECTORS);
+				for (var i = 0; i < myIDs.length; i++)
+				{
+					var Stemp = SECTORS[MatchingKeys[i]];
+					document.getElementById(myIDs[i]).innerHTML = Stemp + "<p>"+ SECTORS2[MatchingKeys[i]]+ " (YTD) <\p>";
+					var Svalue = Stemp[0];
+					if (Svalue == "-")
+					{
+						document.getElementById(tableIDs[i]).className = "redBG";
+					}
+					else
+					{
+						document.getElementById(tableIDs[i]).className = "greenBG";
+					}
+				}
+			}
+		}
+		sector.open("GET", SECTORurl, true);
+		sector.send();
+		
+		var SPXurl = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=^GSPC&interval=1min&apikey=779W3TIU0AXFK698";
+		//Standard and Poor 500
+		
+		var spx = new XMLHttpRequest();
+		var now = "";
+		spx.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				var response = JSON.parse(spx.responseText);
+				now = response["Meta Data"]["3. Last Refreshed"];
+				SPX = response["Time Series (1min)"][now]["4. close"];
+				$("#aspx").text(SPX);
+			}
+		}
+		spx.open("GET", SPXurl, true);
+		spx.send();
+			
+			
+			
+	</script>
+
+		<div id="Newswrap">
+			<h2>News</h2>
+			<div id="Nnews">
+				<ul>
+					<li><a href="news/102617-1.pdf" target="_blank">FCC Plans to Reverse Media Regulations <span class="newsdate">10/26/17</span></a></li>
+					<li><a href="news/102517-1.pdf" target="_blank">The Wealthy Pressures Back to Pay More Interest <span class="newsdate">10/25/17</span></a></li>
+					<li><a href="news/102417-1.pdf" target="_blank">Hundreds of Cities Woo to Become Amazon’s Second Home <span class="newsdate">10/24/17</span></a></li>
+					<li><a href="news/102417-2.pdf" target="_blank">GE Share Falls Over the Discussion of Dividend Cut <span class="newsdate">10/24/17</span></a></li>
+					<li><a href="news/102317-1.pdf" target="_blank">Fidelity Fires Chow Amid Harassment Complaints <span class="newsdate">10/23/17</span></a></li>
+					<li><a href="news/102317-2.pdf" target="_blank">Collateralized Loan Obligations Gain Popularity <span class="newsdate">10/23/17</span></a></li>
+				</ul>
+			</div>
+			
+			<style "text/css">
+			
+			div#Newswrap {
+				float: right;
+				width: 50%;
+				height: 650px;
+				padding-top: 5px;
+				background-color: #445466;
+			}
+			
+			div#Newswrap h2 {
+				background-color: #445466;
+				text-align: center;
+				color: white;
+				display: block;
+				margin-bottom: -3px;
+			}
+			
+			div#Nnews {
+				width: 100%;
+				height: 605px;
+				margin-top: 15px;
+				margin-left: 0;
+				background-color: #d8dfe8;
+				overflow: auto;
+			}
+			
+			div#Nnews li {
+				border-bottom: solid black thin;
+			}
+			
+			div#Nnews li a {
+				Text-decoration: none;
+				color: black;
+				display: block;
+				height: 30px;
+				padding-left: 10px;
+				padding-top: 10px;
+			}
+			
+			div#Nnews li a:hover {
+				background-color: #282828;
+				color: white;
+			}
+		
+			div#Nnews li .newsdate {
+				color: #d8dfe8;
+			}
+			
+			div#Nnews li .breaking {
+				color: rgb(132, 3, 15);
+			}
+			
+			div#Nnews li a:hover .breaking {
+				color: white;
+			}
+			
+			</style>
+		
+        </div>
+
+	</div>
+	<div id="Footer1">
+		<p>
+		Caution: Not all information and calculation are checked for accuracy.<br />
+		You are advised to validate the facts before using.<br/>
+		All rights reserved <br />
+		&copy; 2015 FinanceScript <br>
+		</p>
+	<style>
+	#Footer1 p {
+			clear: both;
+			padding-top: 75px;
+			font-size: 0.8em;
+			color: #888888;
+			text-align: center;
+			padding-bottom: 10px;
+		}
+	</style>
+	</div>
+</body>
+</html>

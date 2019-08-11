@@ -1,0 +1,199 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+	<meta name="keywords" content="Finance, FinanceScript, fscpt, interest, credit, risk, simulation, asset backed securities, abs, equity, stock chart, technical analysis, valuation, derivatives, forwards, futures, option, swap, corporate finance, real estate, private equity, commodity, portfolio" />
+	<meta name="description" content="FinanceScript provides financial information and assists financial calculations" />
+	<title> FinanceScript </title>
+	<link rel="stylesheet" type="text/css" href="../css/design.css" />
+	<link rel="shortcut icon" href="../images/titleIcon.ico" />
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../js/format.js"></script>
+	<script language="JavaScript">
+	
+	</script>
+</head>
+
+<body>
+	<header>
+		<div id="header">
+			<div id="logo">
+			<h1> <a href="../default.html"> <img src="../images/Logo.png" alt="FinanceScript" width="90" height="80"/> </a> </h1>
+			</div>
+			<div id="twitter">
+			<a href="https://twitter.com/FinanceScript" target="_blank"> <img src="../images/TwitterLogo.png" alt="" width="32" height="30"/></a>
+			</div>
+			<div id="linkedin">
+			<a href="https://www.linkedin.com/company/financescript-com?trk=company_logo" target="_blank"> <img src="../images/LIlogo.png" alt="" width="30" height="30"/></a>
+			</div>
+		</div>
+		<div id="subheader">
+			<div id="navset">
+			<ul id="nav">
+				<li id="lemon"><a> About </a>
+					<ul class="sub1">
+						<li><a href="../about/default.html"> About FinanceScript </a></li>
+						<li><a href="../about/contact.html"> Contact Us </a></li>
+					</ul>
+				</li>
+				<li id="green"><a> Fixed Income </a>
+					<ul class="sub1">
+						<li><a href="../fixed/invest.html"> Investing in Bonds </a></li>
+						<li><a href="../fixed/credit.html"> Credit Analysis </a></li>
+						<li><a href="../fixed/abs.html"> Asset Backed Securities </a></li>
+					</ul>
+				</li>
+				<li id="blue"><a> Equity </a>
+					<ul class="sub1">
+						<li><a href="../equity/invest.html"> Investing in Equities </a></li>
+						<li><a href="../equity/stockchart.html"> Stock Chart </a></li>
+						<li><a href="../equity/valuation.html"> Equity Valuation </a></li>
+					</ul>
+				</li>
+				<li id="purple"><a> Derivatives </a>
+					<ul class="sub1">
+						<li><a href="../derivatives/invest.html"> About Derivatives </a></li>
+						<li><a href="../derivatives/forwardfutures.html"> Forwards / Futures </a></li>
+						<li><a href="../derivatives/option.html"> Options </a></li>
+						<li><a href="../derivatives/swap.html"> Swaps </a></li>
+					</ul>
+				</li>
+				<li id="orange"><a> Others </a>
+					<ul class="sub1">
+						<li><a href="../others/corpfinance.html"> Corporate Finance </a></li>
+						<li><a href="../others/realestate.html"> Real Estate Investment </a></li>
+						<li><a href="../others/privateequity.html"> Private Equities </a></li>
+						<li><a href="../others/commodity.html"> Commodity </a></li>
+						<li><a href="../others/portfolio.html"> Portfolio Management </a></li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</header>
+<div id="mainbody">
+	<div id="topicNav">
+		<h2>Choose One</h2>
+		<ul>
+			<li id="c1" class="clicked"><a id="a1" class="clicked"> Return and Risk </a></li>
+		</ul>
+	</div>
+	<div id="mainmainbody">
+		<div id="b1">
+			<h2>Return and Risk<a href="" class="p1" onclick="printDiv('b1')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+			<br />
+			<h3>
+				Introduction
+			</h3>
+			<br />
+			<p>
+				Investing in equity, in general, accompanies more risk than investing in a bond does, because shareholders' claim is weaker than bondholder's. However, taking this additional risk is often well rewarded by a higher return, and it is a very popular means of investment, especailly in developed countries. This extra return is called equity premium, and each stock has distinct return and risk. Understanding <strong>required return</strong> (the minimum return an investor requires given the asset's risk) is crucial for <a href ="../equity/valuation.html">equity valuation</a>.
+			</p>
+			<br />
+			<h3>
+				The Capital Asset Pricing Model (CAPM)
+			</h3>
+			<br />
+			<p>
+				The CAPM is perhaps the most well-known model for measuring a required return. It assumes investors make investment decisions based on the mean return and variance of their total portfolio. The CAPM evaluates an asset's risk in terms of the asset's contribution to the <em>systematic risk</em> of an overall portfolio during a certain period of time. According to the model, the required return is:
+			</p>
+			<br />
+			<p>
+				`r_i = r_f + \beta_i * RMRF`, where
+			<table>
+				<tr><td>`r_i`</td> <td>the require return on share `i`,</td></tr>
+				<tr><td>`r_f`</td> <td>the current expected risk-free return,</td></tr>
+				<tr><td>`\beta`</td> <td>the sensitivity of share `i`'s returns on the "market portfolio", and</td></tr>
+				<tr><td>`RMRF`</td> <td>the equity risk premium, market return minus `r_f`</td></tr>
+			</table>
+			</p>
+			<br />
+			<p>
+				For U.S. public equities, the "market portfolio" would most likely be S&amp;P 500 or NYSE Composite, and the five years of monthly data are usually used for computation. Softwares like R and Python have made this easy.
+			</p>
+			<p>
+			<em>See an example code with <a href="../code/r_capm.pdf" target="_blank">R</a>.</em>
+			</p>
+			<br />
+			<h3>
+				The Fama-French Model (FFM)
+			</h3>
+			<br />
+			<p>
+				Unlike the CAPM, the Fama-French Model is a <strong>multifactor model</strong>, which attempts to describe risk with more than one factor. Eugene Fama and Kenneth French built the <strong>Fama-French Model</strong> in an attempt to improve the CAPM, which does not consider the size and P/B ratio of a firm for risk and return accessment. The FFM estimate of the required return is:
+			</p>
+			<br />
+			<p>
+				`r_i = r_f + \beta*RMRF + \beta_s(i)*SMB + \beta_v(i)*HML`, where
+			<table>
+				<tr><td>`\beta_s(i)`</td> <td>the coefficient of share `i`'s on SMB,</td></tr>
+				<tr><td>`SMB`</td> <td>the average return difference between small-cap and large-cap portfolios,</td></tr>
+				<tr><td>`\beta_v(i)`</td> <td>the coefficient of share `i`'s on HML, and</td></tr>
+				<tr><td>`HML`</td> <td>the average return difference between high-value and low-value portfolios</td></tr>
+			</table>
+			</p>
+			<br />
+			<h3>
+				The Weighted Average Cost of Capital (WACC)
+			</h3>
+			<br />
+			<p>
+				The CAPM and FFM are used to compute a rate of return on <em>equity</em>. On the other hand, <strong>Cost of Capital</strong> represents the <em>overall</em> required rate of return of a copmany. The <strong>Weighted Average Cost of Capital (WACC)</strong> is simply an <em>after-tax</em> weighted average of required rates of return for debt, equity, and preferred equity. The formula for WACC is:
+			</p>
+			<br />
+			<p>
+				`WAC C = (MVD)/(MVD + MVCE) r_d (1-r_t) + (MVCE)/(MVD + MVCE) r_e`, where
+				<table>
+				<tr><td>`WAC C`</td> <td>the weighted average cost of capital,</td></tr>
+				<tr><td>`MVD`</td> <td>the market values of debt,</td></tr>
+				<tr><td>`MVCE`</td> <td>the market values of equity,</td></tr>
+				<tr><td>`r_d`</td> <td>the required rate on debt,</td></tr>
+				<tr><td>`r_t`</td> <td>the tax rate, and</td></tr>
+				<tr><td>`r_e`</td> <td>the required rate on equity</td></tr>
+				</table>
+			</p>
+		</div>	
+	</div>
+</div>
+	<div id="Footer1">
+		<p>
+		Caution: Not all information and calculation are checked for accuracy.<br />
+		You are advised to validate the facts before using.<br/>
+		All rights reserved <br />
+		&copy; 2015 FinanceScript <br>
+		</p>
+	</div>
+	<style "text/css">
+	select {
+		width: 150px;
+	}
+	
+	input {
+		width: 150px;
+	}
+	
+	input.btn {
+		width: 10%;
+		height: 25px;
+		background-color: #282828;
+		color: white;
+		border-color: orange;
+		font-family: Vrinda;
+		vertical-align: center;
+		margin-left: 10px;
+	}
+	table td {
+		text-align: left !important;
+	}
+
+	table.formFFTable td{
+		text-align: left;
+		width: 260px;
+	}
+
+	</style>
+</body>
+</html>

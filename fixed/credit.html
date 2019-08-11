@@ -1,0 +1,479 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+	<meta name="keywords" content="Finance, FinanceScript, fscpt, Beta, Analytic, Analysis" />
+	<meta name="description" content="FinanceScript provides quantitative financial analysis" />
+	<title> FinanceScript </title>
+	<link rel="stylesheet" type="text/css" href="../css/design.css" />
+	<link rel="shortcut icon" href="../images/titleIcon.ico" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+	<script src="../js/format.js"></script>
+	<script language="JavaScript">	
+	function sendRequest() {
+		var f1t = document.getElementById('f1t').value;
+		var f1u = document.getElementById('f1u').value;
+		var f1r = document.getElementById('f1r').value;
+		var f1K = document.getElementById('f1K').value;
+		var f1tm = document.getElementById('f1tm').value;
+		var f1v = document.getElementById('f1v').value;
+		var d1 = (Math.log(f1t/f1K) + f1r*(f1tm) + (f1v*f1v)*f1tm/2)/(f1v*Math.sqrt(f1tm));
+		var d2 = d1 - f1v*Math.sqrt(f1tm);
+		var e1 = (Math.log(f1t/f1K) + f1u*(f1tm) + (f1v*f1v)*f1tm/2)/(f1v*Math.sqrt(f1tm));
+		var e2 = e1 - f1v*Math.sqrt(f1tm);
+		var r1p = Math.round((1 - normalcdf(e2))*10000)/100;
+		var tr1e = f1K*normalcdf(-1*e2) - f1t*Math.exp(f1u*f1tm)*normalcdf(-1*e1);
+		var r1e = Math.round(tr1e*100)/100;
+		var tr1v = f1K*Math.exp(-1*f1r*f1tm)*normalcdf(-1*d2) - f1t*normalcdf(-1*d1);
+		var r1v = Math.round(tr1v*100)/100;
+		document.getElementById('r1p').textContent = r1p + "%";
+		document.getElementById('r1e').textContent = r1e;
+		document.getElementById('r1v').textContent = r1v;
+	}
+	
+	function normalcdf(x){
+		var a = 1/(1+.2316419*Math.abs(x));
+		var b = .3989423*Math.exp(-x*x/2);
+		var p = a*b*(.3193815+a*(-.3565638+a*(1.781478+a*(-1.821256+a*1.330274))));
+		if (x > 0) {
+		p = 1 - p;
+		}
+		return p;
+	}
+
+	</script>
+</head>
+
+<body>
+	<header>
+		<div id="header">
+			<div id="logo">
+			<h1> <a href="../default.html"> <img src="../images/Logo.png" alt="FinanceScript" width="90" height="80"/> </a> </h1>
+			</div>
+			<div id="twitter">
+			<a href="https://twitter.com/FinanceScript" target="_blank"> <img src="../images/TwitterLogo.png" alt="" width="32" height="30"/></a>
+			</div>
+			<div id="linkedin">
+			<a href="https://www.linkedin.com/company/financescript-com?trk=company_logo" target="_blank"> <img src="../images/LIlogo.png" alt="" width="30" height="30"/></a>
+			</div>
+		</div>
+		<div id="subheader">
+			<div id="navset">
+			<ul id="nav">
+				<li id="lemon"><a> About </a>
+					<ul class="sub1">
+						<li><a href="../about/default.html"> About FinanceScript </a></li>
+						<li><a href="../about/contact.html"> Contact Us </a></li>
+					</ul>
+				</li>
+				<li id="green"><a> Fixed Income </a>
+					<ul class="sub1">
+						<li><a href="../fixed/invest.html"> Investing in Bonds </a></li>
+						<li><a href="../fixed/credit.html"> Credit Analysis </a></li>
+						<li><a href="../fixed/abs.html"> Asset Backed Securities </a></li>
+					</ul>
+				</li>
+				<li id="blue"><a> Equity </a>
+					<ul class="sub1">
+						<li><a href="../equity/invest.html"> Investing in Equities </a></li>
+						<li><a href="../equity/stockchart.html"> Stock Chart </a></li>
+						<li><a href="../equity/valuation.html"> Equity Valuation </a></li>
+					</ul>
+				</li>
+				<li id="purple"><a> Derivatives </a>
+					<ul class="sub1">
+						<li><a href="../derivatives/invest.html"> About Derivatives </a></li>
+						<li><a href="../derivatives/forwardfutures.html"> Forwards / Futures </a></li>
+						<li><a href="../derivatives/option.html"> Options </a></li>
+						<li><a href="../derivatives/swap.html"> Swaps </a></li>
+					</ul>
+				</li>
+				<li id="orange"><a> Others </a>
+					<ul class="sub1">
+						<li><a href="../others/corpfinance.html"> Corporate Finance </a></li>
+						<li><a href="../others/realestate.html"> Real Estate Investment </a></li>
+						<li><a href="../others/privateequity.html"> Private Equities </a></li>
+						<li><a href="../others/commodity.html"> Commodity </a></li>
+						<li><a href="../others/portfolio.html"> Portfolio Management </a></li>
+					</ul>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</header>
+<div id="mainbody">
+	<div id="topicNav">
+		<h2>Choose One</h2>
+		<ul>
+			<li id="c1" class="clicked"><a id="a1" class="clicked"> Concepts </a></li>
+			<li id="c2" class="notclicked"><a id="a2" class="notclicked"> Credit Rating &amp; Score </a></li>
+			<li id="c3" class="notclicked"><a id="a3" class="notclicked"> Structural  Models <img class="c1" src="../images/calc.png" alt="print" width="25" height="25"/></a></li>
+		</ul>
+	</div>
+	<div id="mainmainbody">
+		<div id="b1">
+			<h2>Concepts <a href="" class="p1" onclick="printDiv('b1')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+			<br />
+			<h3>Measures of Credit Risk</h3>
+			<br />
+			<p>
+				<strong>credit risk</strong> is the risk of losses from a borrower's failure to meet timely and full payments.
+				To quantify a credit risk, we estimate four measures:
+			</p>
+			<br />
+			<ul>
+				<li><strong>Probability of default</strong>: the probability that a borrower fails to pay interest or principal before maturity;</li>
+				<li><strong>Loss given default</strong>: the amount of the principal and interest lost in the event of default;</li>
+				<li><strong>Expected loss</strong>: <em>probability of default</em> multiplied by <em>loss given default</em>; and</li>
+				<li><strong>Present value of the expected loss</strong>: expected loss adjusted with the time value and risk-neutral probability</li>
+			</ul>
+			<br />
+			<p>
+				We pay attention to three popular models for credit risk: traditional credit model (e.g. credit rating), structural model, and reduced form model.
+			</p>
+			<br />
+			<h3>Traditional Credit Models</h3>
+			<p class="recc">click "credit rating &amp; score" on the left panel for more detail</p>
+			<br />
+			<p>
+				Depending on the types of the borrowers, the approach is called either <em>credit scoring</em> or <em>credit rating</em>.
+				While <strong>credit scoring</strong> is used for small owner-operated businesses and individuals,
+				<strong>credit ratings</strong> are used for companies, sovereigns, sub-sovereigns, and asset-backed securities.
+				This approach is <em>widely-used</em> and based on the financial strengths reflected by <em>financial statement</em> or other available resources.
+				These rankings are <strong>ordinal</strong>. That is, the riskiness is ordered from highest to lowest, but the degree of
+				the risk differences is not readily available.
+			</p>
+			<br />
+			<h3>Structural Models</h3>
+			<p class="recc">click "structural models" on the left panel for calculation and assumptions</p>
+			<br />
+			<p>
+				Unlike traditional credit models, structural models quantify the risk associated with a company's debt.
+				An understanding of <em>option analogy</em> for debt is important. A company's debt liability extends only to
+				the company's assets. Therefore, owning the company's debt is equivalent to owning a risk-free bond with a face value <em>K</em>
+				maturing at time <em>T</em>, and simultaneously selling a European put option on the assets of the company with strike price <em>K</em>
+				maturing at time <em>T</em>.
+			</p>
+			<br />
+			<p>
+				Since structural models apply option pricing model, the model imposes some unrealistic assumptions similar to
+				those of Black-Scholes:
+			</p>
+			<br />
+			<ul>
+				<li>The company's assets trade in frictionless markets,</li>
+				<li>The riskless rate of interest, <em>r</em>, is constant over time, and</li>
+				<li>The asset value at time <em>T</em> follows a lognormal distribution.</li>
+			</ul>
+			<br />
+			<h3>Reduced Form Model</h3>
+			<br />
+			<p>
+				However, the assumptions above are impractical. Reduced Form makes less restrictive assumptions:
+			</p>
+			<br />
+			<ul>
+				<li>The company's zero-coupon bond trades in an arbitrage-free, frictionless markets </li>
+				<li>The riskless rate of interest <em>r</em> is <em>stochastic</em></li>
+				<li>Macroeconomic factor <em>X(t)</em> is stochastic</li>
+				<li>The probability of default depends on the state of the economy and is not constant.</li>
+				<li>Each company's default risk is <strong>idiosyncratic</strong>, which means a probability of
+				either of two companies defaults in a recession depends on each company's actions</li>
+				<li>The <em>recovery rate</em> is stochastic</li>
+			</ul>
+		</div>
+		<div id="b2">
+			<h2>Credit Rating and Score <a href="" class="p1" onclick="printDiv('b2')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+			<br />
+			<h3>Credit Rating</h3>
+			<br />
+			<p>
+			Rating agencies aid risk management by ranking borrowers by riskiness.
+			<em><a href="http://www.standardandpoors.com/en_US/web/guest/entity-browse" target="_blank">Standard &amp; Poor's</a></em>
+			and <em>Moody's Investors Service</em> use 21 rating grades.
+			The ratings fall into two categories: <em>investment grade</em> and <em>speculative grades</em>.
+			The following tables represent Standard &amp; Poor's and Moody's Investor's Service ratings. 
+			</p>
+			<br />
+			<table>
+			<tr>
+			<td class="tt">Rating Category</td>
+			<td class="tt">Moody's Investors Service</td>
+			<td class="tt">Standard &amp; Poor's</td>
+			</tr>
+			<tr>
+			<td>1</td>
+			<td class="greenText">Aaa</td>
+			<td class="greenText">AAA</td>
+			</tr>
+			<tr>
+			<td>2</td>
+			<td class="greenText">Aa1</td>
+			<td class="greenText">AA+</td>
+			</tr>
+			<tr>
+			<td>3</td>
+			<td class="greenText">Aa2</td>
+			<td class="greenText">AA</td>
+			</tr>
+			<tr>
+			<td>4</td>
+			<td class="greenText">Aa3</td>
+			<td class="greenText">AA-</td>
+			</tr>
+			<tr>
+			<td>5</td>
+			<td class="greenText">A1</td>
+			<td class="greenText">A+</td>
+			</tr>
+			<tr>
+			<td>6</td>
+			<td class="greenText">A2</td>
+			<td class="greenText">A</td>
+			</tr>
+			<tr>
+			<td>7</td>
+			<td class="greenText">A3</td>
+			<td class="greenText">A-</td>
+			</tr>
+			<tr>
+			<td>8</td>
+			<td class="greenText">Baa1</td>
+			<td class="greenText">BBB+</td>
+			</tr>
+			<tr>
+			<td>9</td>
+			<td class="greenText">Baa2</td>
+			<td class="greenText">BBB</td>
+			</tr>
+			<tr>
+			<td>10</td>
+			<td class="greenText">Baa3</td>
+			<td class="greenText">BBB-</td>
+			</tr>
+			<tr>
+			<td class="speculative">11</td>
+			<td class="speculative">Ba1</td>
+			<td class="speculative">BB+</td>
+			</tr>
+			<tr>
+			<td class="speculative">12</td>
+			<td class="speculative">Ba2</td>
+			<td class="speculative">BB</td>
+			</tr>
+			<tr>
+			<td class="speculative">13</td>
+			<td class="speculative">Ba3</td>
+			<td class="speculative">BB-</td>
+			</tr>
+			<tr>
+			<td class="speculative">14</td>
+			<td class="speculative">B1</td>
+			<td class="speculative">B+</td>
+			</tr>
+			<tr>
+			<td class="speculative">15</td>
+			<td class="speculative">B2</td>
+			<td class="speculative">B</td>
+			</tr>
+			<tr>
+			<td class="speculative">16</td>
+			<td class="speculative">B3</td>
+			<td class="speculative">B-</td>
+			</tr>
+			<tr>
+			<td class="speculative">17</td>
+			<td class="speculative">Caa1</td>
+			<td class="speculative">CCC+</td>
+			</tr>
+			<tr>
+			<td class="speculative">18</td>
+			<td class="speculative">Caa2</td>
+			<td class="speculative">CCC</td>
+			</tr>
+			<tr>
+			<td class="speculative">19</td>
+			<td class="speculative">Caa3</td>
+			<td class="speculative">CCC-</td>
+			</tr>
+			<tr>
+			<td class="speculative">20</td>
+			<td class="speculative">Ca</td>
+			<td class="speculative">CC</td>
+			</tr>
+			<tr>
+			<td class="speculative">21</td>
+			<td class="speculative">C</td>
+			<td class="speculative">D</td>
+			</tr>
+			</table>
+			<br />
+			<p>
+				Standard &amp; Poor's BBB- and above, and Moody's Investor's Service's Baa3 and above are investment-grade.
+			</p>
+			<br />
+			<p>
+				Often, issuers (borrowers) pay the credit-rating agency to rate their debt, and the rating agency has some incentive to
+				give higher ratings than they deserve. The ratings are then distributed for public uses free of charge.
+				Also, it is important to note that the agency tends to keep their ratings stable over time to reduce volatility.
+				Overall, thee ratings are easy to obtain, but the actual percentage of defaults on the same rating grade differs greatly over time.
+			</p>
+			<br />
+			<h3>Credit Score</h3>
+			<br />
+			<p>
+			In the United States, the following factors affect credit scores.
+			</p>
+			<br />
+			<ul>
+				<li> Paying the bills on time/late,</li>
+				<li> Amount of debt compared to the credit limit,</li>
+				<li> The length of the credit record, and</li>
+				<li> Number of credit card accounts </li>
+			</ul>
+			<br />
+			<table>
+			
+			</table>
+		</div>
+		<div id="b3">
+		<h2>Structural Models <a href="" class="p1" onclick="printDiv('b3')"><img src="../images/emblem_print(1).png" alt="print" width="25" height="25"/></a></h2>
+			<br />
+			<h3> Parameter Estimations </h3>
+			<br />
+			<ul>
+				<li><em>u</em>: CAPM</li>
+				<li><em>&#963;</em>: implicit estimation</li>
+			</ul>
+			<br />
+			<h3> Calculation </h3>
+			<br />
+			<h4> Form </h4>
+			<br />
+			<div id="strform">
+				<table>
+				<tr>
+				<td>Time <em>t</em> asset value: <em>A(t)</em> </td>
+				<td><input name="t" type="text" id="f1t" maxlength="10"></td>
+				</tr>
+				<tr>
+				<td>Expected continuous return on assets: <em>u</em></td>
+				<td><input name="t" type="text" id="f1u" maxlength="10" placeholder="e.g. 0.05"></td>
+				</tr>
+				<tr>
+				<td>Continuous risk-free rate: <em>r</em></td>
+				<td><input name="t" type="text" id="f1r" maxlength="10" placeholder="e.g. 0.05"></td>
+				</tr>
+				<tr>
+				<td>Face value of debt: <em>K</em></td>
+				<td><input name="t" type="text" id="f1K" maxlength="10"></td>
+				</tr>
+				<tr>
+				<td>Time to Maturity: <em>T-t</em></td>
+				<td><input name="t" type="text" id="f1tm" maxlength="10"></td>
+				</tr>
+				<tr>
+				<td>Asset return stdev: <em>&#963;</em></td>
+				<td><input name="t" type="text" id="f1v" maxlength="10"></td>
+				</tr>
+				</table>
+				<br />
+				<input class="btn" name="button" type="button" id="submit" value="Run" onclick="sendRequest();">
+			</div>
+			<br />
+			<div id="strreport">
+			<h4> Report </h4>
+			<br />
+			<table>
+				<tr>
+				<td>Probability of the debt defaulting: </td>
+				<td id="r1p"></td>
+				</tr>
+				<tr>
+				<td>Expected loss: </td>
+				<td id="r1e"></td>
+				</tr>
+				<tr>
+				<td>Present value of the expected loss: </td>
+				<td id="r1v"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+	<style "text/css">
+	
+	#mainmainbody p.recc {
+		color: white;
+		font-size: 0.8em;
+		padding-left: 25px;
+	}
+	
+	#mainmainbody table {
+		text-align: left;
+	}
+	
+	#mainmainbody td{
+		padding-left: 10px;
+		text-align: center;
+	}
+	
+	.tt{
+		text-align: left;
+		padding-left: 10px;
+		color: orange;
+	}
+	
+	.speculative{
+		color: #888888;
+	}
+	
+	.investment{
+		color: white;;
+	}
+	
+	#mainmainbody a {
+		color: #ffff82;
+		text-decoration: none;
+	}
+	
+	#mainmainbody a:hover {
+		color: white;
+	}
+	
+	#mainmainbody h4 {
+		padding-left: 10px;
+	}
+	
+	#strform table {
+		text-align: left;
+	}
+	
+	#strform td, #strreport td {
+		text-align: left;
+	}
+	
+	input.btn {
+		width: 10%;
+		height: 25px;
+		background-color: #282828;
+		color: white;
+		border-color: orange;
+		font-family: Vrinda;
+		vertical-align: center;
+		margin-left: 10px;
+	}
+	</style>
+	<div id="Footer1">
+		<p>
+		Caution: Not all information and calculation are checked for accuracy.<br />
+		You are advised to validate the facts before using.<br/>
+		All rights reserved <br />
+		&copy; 2015 FinanceScript <br>
+		</p>
+	</div>
+</body>
+</html>

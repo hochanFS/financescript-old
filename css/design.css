@@ -1,0 +1,351 @@
+@font-face {
+font-family: 'Source Sans Pro';
+src: url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Signika, Georgia, "Times New Roman", Times, serif;
+	background-color: #181818;
+}
+
+header{
+	background: #181818;
+	height: 100px;
+	padding-top: 10px;
+}
+
+div#header{
+	width: 90%;
+	margin: -10px auto 0 auto;
+	background-color: #181818;
+	padding-top: 10px;
+	padding-bottom: 80px;
+}
+
+div#header div#logo{
+	width: 65%;
+	float: left;
+}
+
+div#header div#twitter{
+	width: 32px;
+	float: right;
+}
+
+div#header div#linkedin{
+	width: 32px;
+	float: right;
+}
+
+div#subheader{
+	clear: both;
+	height: 23px;
+	background: #282828;
+	padding-bottom: 8px;
+	margin-top: 5px;
+}
+
+/* rules for navigation menu*/
+
+div#navset{
+	width: 90%;
+	height: 31px;
+	margin: 0 auto;
+	background-color: #282828;
+}
+
+ul#nav{
+	list-style-type: none;
+	height: 236px; width: 90%;
+	font-family: Vrinda;
+}
+
+ul.sub1 {
+	list-style-type: none;
+	width: 250px;
+}
+
+ul#nav li {
+	width: 15%;
+	text-align: center;
+	position: relative;
+	float: left;
+	margin-left: 1%;
+	line-height: 30px;
+}
+
+ul#nav li#orange {
+	border-top: solid orange thin;
+}
+
+ul#nav li#orange:hover .sub1 {
+	background-color: orange;
+}
+
+ul#nav li#orange:hover >a {
+	background-color: orange;
+	color: black;
+}
+
+ul#nav li#lemon {
+	border-top: solid #ffff82 thin;
+}
+
+ul#nav li#lemon:hover .sub1 {
+	background-color: #ffff82;
+}
+
+ul#nav li#lemon:hover >a {
+	background-color: #ffff82;
+	color: black;
+}
+
+ul#nav li#green {
+	border-top: solid #e2ff82 thin;
+}
+
+ul#nav li#green:hover .sub1 {
+	background-color: #e2ff82;
+}
+
+ul#nav li#green:hover >a {
+	background-color: #e2ff82;
+	color: black;
+}
+
+ul#nav li#blue {
+	border-top: solid #d8dfe8 thin;
+}
+
+ul#nav li#blue:hover .sub1 {
+	background-color: #d8dfe8;
+}
+
+ul#nav li#blue:hover >a {
+	background-color: #d8dfe8;
+	color: black;
+}
+
+ul#nav li#purple {
+	border-top: solid #ff91fb thin;
+}
+
+ul#nav li#purple:hover .sub1 {
+	background-color: #ff91fb;
+}
+
+ul#nav li#purple:hover >a {
+	background-color: #ff91fb;
+	color: black;
+}
+
+ul#nav a {
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	color: white;
+	}
+
+ul#nav .sub1 li {
+	width: 200px;
+	margin-top: 3px;
+	border-top: none;
+	text-align: left;
+	color: white;
+}
+
+ul#nav .sub1 li a {
+	width: 200px;
+	margin-left: 10px;
+}
+	
+ul#nav .sub1 a {
+	margin-top: 3px;
+	color: black;
+}
+
+
+ul#nav ul.sub1 {
+	display: none;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+}
+
+ul#nav li:hover .sub1 {
+	display: block;
+	color: black;
+}
+
+ul#nav .sub1 li:hover >a {
+	text-decoration: underline;
+}
+
+/* End of navigation */
+
+div#mainbody {
+	clear: both;
+	width: 90%;
+	margin: 30px auto;
+	padding: 20px 0 20px 0;
+	background-color: #181818;
+	margin-bottom: 50px;
+}
+
+#mainbody h2 {
+	font-family: Vrinda, 'Courier New', Times;
+	color: orange;
+	font-size: 1.4em;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+body {
+	color: white;
+}
+	
+#topicNav {
+	width: 25%;
+	float: left;
+}
+	
+#topicNav h2{
+	text-align: center;
+	background-color: #282828;
+	color: white;
+	height: 40px;
+}
+	
+#topicNav li.notclicked {
+	display: block;
+	width: 100%;
+	padding-top: 10px;
+	background-color: #888888;
+	color: black;
+	font-family: Vrinda;
+	font-size: 1.4em;
+	border-top: solid #282828 thin;
+}
+	
+#topicNav li.clicked {
+	display: block;
+	width: 100%;
+	padding-top: 10px;
+	background-color: white;
+	color: black;
+	font-family: Vrinda;
+	font-size: 1.4em;
+	border-top: solid #282828 thin;
+}
+
+#topicNav li a {
+	padding-left: 10px;
+	display: block;
+	border: none;
+	cursor: pointer;
+}
+	
+#topicNav li a:hover {
+	padding-left: 10px;
+	text-decoration: underline;
+}
+	
+#mainmainbody {
+	float: left;
+	width: 75%;
+}
+	
+#mainmainbody h2 {
+	width: 100%;
+	text-align: center;
+	background-color: #445466;
+	color: white;
+	height: 40px;
+}
+	
+#mainmainbody p {
+	padding-left: 10px;
+	padding-top: 5px;
+}
+	
+#mainmainbody h3 {
+	padding-left: 10px;
+	padding-top: 5px;
+	color: orange;
+	font-size: 1.2em;
+}
+
+#mainmainbody strong {
+		color: #888888;
+}
+	
+#mainmainbody ul, ol{
+	list-style-position: inside;
+	padding-left: 10px;
+}
+	
+#mainmainbody p.recc {
+	color: white;
+	font-size: 0.8em;
+	padding-left: 25px;
+}	
+
+#mainmainbody table {
+	text-align: left;
+}
+	
+#mainmainbody td{
+	padding-left: 10px;
+	text-align: center;
+}
+	
+.tt{
+	text-align: left;
+	padding-left: 10px;
+	color: orange;
+}
+	
+#mainmainbody a {
+	color: #ffff82;
+	text-decoration: none;
+}
+	
+#mainmainbody a:hover {
+	color: white;
+}
+	
+#mainmainbody h4 {
+	padding-left: 10px;
+}
+	
+#strform table {
+	text-align: left;
+}
+	
+#strform td, #strreport td {
+	text-align: left;
+}
+#Footer1 p {
+	clear: both;
+	padding-top: 75px;
+	font-size: 0.8em;
+	color: #888888;
+	text-align: center;
+}
+
+.p1 {
+	margin-top: 5px;
+	float: right;
+	margin-right: 5px;
+	}
+	
+.c1 {
+		margin-top: 2px;
+		float: right;
+		margin-right: 5px;
+	}
